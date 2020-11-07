@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:padding="20dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimaryDark">
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@drawable/somiah"
+            android:layout_centerVertical="true"/>
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Somiah AlDouis"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/profile_image"
+            android:layout_centerVertical="true"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UI/UX Designer, Android Developer"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:layout_toRightOf="@+id/profile_image"
+            android:layout_below="@+id/name"
+            android:includeFontPadding="false"
+            android:layout_marginLeft="10dp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Work Place:"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        >
+
+        <ImageButton
+                    android:id="@+id/map_button"
+                    android:layout_width="400dp"
+                    android:layout_height="125dp"
+                    android:src="@drawable/mapp"
+                    android:scaleType="centerCrop"
+                    android:paddingLeft="-10sp"
+                    />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Working Models:"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal"
+        android:layout_weight="3"
+        >
+        <Button
+            android:id="@+id/github_button"
+            android:text="Android Projects in                              github"
+            android:textSize="10sp"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_weight="1"
+            android:background="@color/colorPrimary"
+            android:layout_margin="8dp"
+            android:drawableTop="@drawable/ic_action_github"
+            android:padding="20dp"
+            />
+        <Button
+            android:id="@+id/behance_button"
+            android:text="UI / UX Projects in Behance"
+            android:textSize="10sp"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_weight="1"
+            android:background="@color/colorAccent"
+            android:layout_margin="8dp"
+            android:drawableTop="@drawable/ic_action_font_bold"
+            android:padding="20dp"
+            />
+        <Button
+            android:id="@+id/instagram_button"
+            android:layout_width="0dp"
+            android:layout_height="160dp"
+            android:layout_weight="1"
+            android:text="UI                 Photos              in instagram"
+            android:textSize="10sp"
+            android:background="@color/colorPrimaryDark"
+            android:layout_margin="8dp"
+            android:drawableTop="@drawable/ic_action_picture"
+            android:padding="20dp"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact us:"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="16dp"
+        android:textSize="14sp"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+
+        <Button
+            android:id="@+id/call_button"
+            android:layout_width="400dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Call Number"
+            android:textSize="10sp"
+            android:background="@color/colorAccent"
+            android:layout_marginBottom="8dp"
+            android:drawableLeft="@drawable/ic_action_phone_start"
+            android:paddingLeft="20dp"
+            />
+        <Button
+            android:id="@+id/email_button"
+            android:layout_width="400dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:text="Email Address"
+            android:textSize="10sp"
+            android:background="@color/colorPrimary"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/ic_action_gmail"
+            android:paddingLeft="20dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
