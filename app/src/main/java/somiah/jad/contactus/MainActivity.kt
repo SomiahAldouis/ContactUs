@@ -4,8 +4,11 @@ import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.ContactsContract
 import android.widget.Button
 import android.widget.ImageButton
+
+private val CONTACT_RESULT = 0
 
 class MainActivity : AppCompatActivity() {
 
@@ -27,6 +30,7 @@ class MainActivity : AppCompatActivity() {
         callButton = findViewById(R.id.call_button)
         emailButton = findViewById(R.id.email_button)
 
+        //------------------------- Share ----------------------------//
         mapButton.setOnClickListener {
             val mapIntent = Intent().apply {
                 action =Intent.ACTION_VIEW
@@ -64,17 +68,45 @@ class MainActivity : AppCompatActivity() {
             }
         }
         callButton.setOnClickListener {
-
-
-
-
-
+            val pickContactIntent = Intent( ).apply {
+                    action = Intent.ACTION_PICK
+                    data = ContactsContract.Contacts.CONTENT_URI
+                }
+            if (pickContactIntent.resolveActivity(packageManager) != null) {
+                startActivityForResult(pickContactIntent,CONTACT_RESULT)
+            }
         }
         emailButton.setOnClickListener {
-
-
-
-
+            val emailIntent = Intent().apply {
+                Intent.ACTION_SEND
+                type = "text/plain"
+                putExtra(Intent.EXTRA_EMAIL, arrayOf("somiahjamal1997@gmail.com"))
+                putExtra(Intent.EXTRA_TEXT,"Subject No.1" )
+                putExtra(Intent.EXTRA_SUBJECT, "this is Message from my App to Email")
+            }
+            if(emailIntent.resolveActivity(packageManager) != null ){
+                startActivity(emailIntent)
+            }
         }
+
+        //------------------------- Result Contact ----------------------------//
+//        override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//            when {
+//                resultCode != RESULT_OK -> return
+//                requestCode == CONTACT_RESULT && data != null -> {
+//                    val contactUri: Uri? = data.data
+//                    val queryFields = arrayOf(ContactsContract.Contacts.DISPLAY_NAME)
+//                    val cursor = requireActivity().contentResolver
+//                        .query(contactUri, queryFields, null, null, null)
+//                    cursor?.use {
+//                        if (it.count == 0) {
+//                            return
+//                        }
+//                        it.moveToFirst()
+//                    }
+//                }
+//            }
+//        }
+
     }
 }
